@@ -1,12 +1,10 @@
 import websocket
-
-from bitcoins.myapp.producer import send_producer
+from myapp.producer import send_producer
 
 try:
     import thread
 except ImportError:
     import _thread as thread
-import time
 
 
 def on_message(ws, message):
@@ -31,6 +29,7 @@ def on_open(ws):
 
 
 def connect():
+    print("connected websocket")
     websocket.enableTrace(True)
     ws = websocket.WebSocketApp("wss://ws.blockchain.info/inv",
                               on_message = on_message,
