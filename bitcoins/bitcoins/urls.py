@@ -16,6 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from myapp.views import TransactionView, CountOfTransactionView, AddressView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('show_transactions/', TransactionView.as_view(), name="TransactionView"),
+    path('transactions_count_per_minute/<int:min_value>/', CountOfTransactionView.as_view(), name="CountOfTransactionView"),
+    path('high_value_addr/', AddressView.as_view(), name="AddressView")
 ]

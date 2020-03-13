@@ -22,7 +22,6 @@ def on_close(ws):
 
 def on_open(ws):
     def run(*args):
-        ws.send("{\"op\":\"ping\"}")
         ws.send("{\"op\":\"unconfirmed_sub\"}")
         print("thread terminating...")
     thread.start_new_thread(run, ())
