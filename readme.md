@@ -1,6 +1,8 @@
 <h1> <b> Bit Coin Transactions </b> </h1>
+
 The project is used to display bit coin transaction retrieved from https://www.blockchain.com/api/api_websocket.
 There are three API calls made
+
 1. <b> /show_transactions/ </b> - Displays latest 100 transactions. The data will only change in every 1 minute.
 2. <b> /transactions_count_per_minute/{min_value} </b> - Displays number of transactions per minute for the last hour. The data will change every minute.
 3. <b> /high_value_addr </b> - Displays the bitcoin addresses which have the most aggregate value in transactions in the last 3 hours.
