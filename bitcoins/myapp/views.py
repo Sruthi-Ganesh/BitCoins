@@ -11,7 +11,9 @@ from django.core.cache import cache
 class TransactionView(APIView):
     def get(self, request, format=None):
         cache_list = cache.get('transactions')
-        trunc_list = cache_list[-100:]
+        trunc_list = []
+        if cache_list:
+            trunc_list = cache_list[-100:]
         return Response(trunc_list)
 
 
@@ -19,12 +21,13 @@ class CountOfTransactionView(APIView):
     def get(self, request, min_value, format=None):
         cache_dict = cache.get('count_of_transactions')
         min_value_list = []
-        for key in cache_dict:
-            value = cache_dict[key]
-            print(key)
-            print(value)
-            if value >= min_value:
-                min_value_list.append({key:value})
+        if cache_dict:
+            for key in cache_dict:
+                value = cache_dict[key]
+                print(key)
+                print(value)
+                if value >= min_value:
+                    min_value_list.append({key:value})
         return Response(min_value_list)
 
 
