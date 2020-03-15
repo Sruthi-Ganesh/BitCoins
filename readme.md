@@ -1,3 +1,4 @@
+<b> Bit Coin Transactions <b>
 The project is used to display bit coin transaction retrieved from https://www.blockchain.com/api/api_websocket.
 There are three API calls made
 1. /show_transactions/ - Displays latest 100 transactions. The data will only change in every 1 minute.
@@ -7,7 +8,7 @@ There are three API calls made
 To run this application,
 1. Install kafka & zookeeper - Follow this guide https://tecadmin.net/install-apache-kafka-ubuntu/
 2. Install redis-server - sudo apt install redis-server
-3. Go into the environment (venv in the git root directory) and perform "pip install -r requirements.txt"
+3. Go into the environment (venv in the git root directory) by executing "source venv/bin/activate" and perform "pip install -r requirements.txt"
 4. Open django shell "python manage.py shell" and execute the following commands
 	1. from myapp import producer
 	2. producer.connect()
