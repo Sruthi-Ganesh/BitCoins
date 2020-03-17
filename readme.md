@@ -16,9 +16,9 @@ To run this application,
 	2. <b> producer.connect() </b>
 5. Open another django shell <b> "python manage.py shell" </b> and execute the following commands
 	1. <b> from myapp import consumer </b>
-	2. <b> producer.connect() </b>
+	2. <b> consumer.connect() </b>
 6. Open another django shell <b> "python manage.py shell" </b> and execute the following commands
-	1. <b> from myapp import websocker_app </b>
+	1. <b> from myapp import websocket_app </b>
 	2. <b> websocket_app.connect() </b>
 7. In new terminal, Go to <b> bitcoins/bitcoins </b> (where celery.py is present) and run the command <b> "celery -A bitcoins worker -l info" </b>
 8. In new terminal, go to <b> bitcoins/ </b> (where manage.py is present) and run <b> "python manage.py runserver <port>" </b>  (Use port only if 8000 is already registered with any other server) 
